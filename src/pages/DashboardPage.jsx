@@ -27,7 +27,8 @@ export default function DashboardPage() {
   const hour = new Date().getHours()
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
   const totalValue = inventory.reduce((a,i) => a + i.quantity * i.price, 0)
-  const todayStr = new Date().toISOString().split("T")[0];
+  const todayLocal = new Date();
+  const todayStr = `${todayLocal.getFullYear()}-${String(todayLocal.getMonth()+1).padStart(2,'0')}-${String(todayLocal.getDate()).padStart(2,'0')}`;
   const todayData = report.daily?.find(d => d.date === todayStr) || { revenue: 0, profit: 0, sales: 0 };
 
   const quickActions = [
