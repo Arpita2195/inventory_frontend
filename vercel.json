@@ -1,7 +1,7 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://ai-first-bulid-saas.vercel.app/api/$1" },
+    { "source": "/api/(.*)", "destination": "https://inventory-backend-api-orcin.vercel.app/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
