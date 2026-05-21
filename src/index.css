@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --bg: #F8FAFC;
+  --bg2: #ffffff;
+  --bg3: #fcfcfd;
+  --border: #E2E8F0;
+  --border-light: rgba(226, 232, 240, 0.4);
+  --purple: #6366F1;
+  --purple-dark: #4F46E5;
+  --purple-light: #EEF2FF;
+  --purple-xl: #F5F3FF;
+  --coral: #F43F5E;
+  --coral-light: #FFF1F2;
+  --green: #10B981;
+  --green-light: #ECFDF5;
+  --amber: #F59E0B;
+  --amber-light: #FFFBEB;
+  --text: #0F172A;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --radius: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium Card Styles */
+.premium-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+}
+.premium-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--purple-light);
+}
+
+/* Table Responsiveness */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: white;
+  margin-top: 10px;
+}
+.table-container::-webkit-scrollbar { height: 6px; }
+.table-container::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+/* Mobile Enhancements */
+@media (max-width: 768px) {
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px !important;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+  .app-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 20px 0 50px rgba(0,0,0,0.1);
+  }
+  .sidebar-overlay {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+  }
+  .app-content {
+    padding: 16px !important;
+  }
+  .topbar-title-text {
+    font-size: 16px !important;
+  }
+  .stat-card-value {
+    font-size: 22px !important;
+  }
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 12px;
+}
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: flex !important; }
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Grids */
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1024px) {
+  .dashboard-charts-grid { grid-template-columns: 1fr; }
+}
+
+.billing-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+@media (max-width: 1100px) {
+  .billing-grid { grid-template-columns: 1fr; }
+}
+
+/* Transitions */
+.fade-in { animation: fadeIn 0.3s ease-out; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
